@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Zeyada';
+  src: url('Zeyada-Regular.ttf') format('truetype');
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('Images/pngtree-fold-kraft-white-paper-image_509388.jpg');
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  user-select: none;
+}
+
+.paper {
+  position: absolute;
+  background-image: url('Images/images.jpeg'); /* Background texture */
+  background-size: 500px;
+  background-position: center center;
+  padding: 20px 100px;
+  transform: rotateZ(-5deg);
+  box-shadow: 1px 15px 20px 0px rgba(0, 0, 0, 0.5);
+  cursor: grab;
+  transition: box-shadow 0.2s ease;
+}
+
+.paper:active {
+  cursor: grabbing;
+  box-shadow: 3px 20px 25px rgba(0, 0, 0, 0.7);
+}
+
+.paper.heart {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border-radius: 50%;
+  background-image: none;
+  background-color: #fff;
+}
+
+.paper.heart::after {
+  content: "";
+  background-image: url('Images/unnamed heart.jpg');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+.paper.image {
+  position: relative;
+  padding: 10px;
+  width: 240px;
+  min-height: 200px;
+  border-radius: 12px;
+}
+
+.paper.image p {
+  font-size: 24px;
+  margin: 5px 0;
+}
+
+img {
+  max-height: 200px;
+  width: 100%;
+  border-radius: 10px;
+  user-select: none;
+  pointer-events: none;
+}
+
+p {
+  font-family: 'Zeyada';
+  font-size: 40px;
+  color: rgb(0, 0, 100);
+  opacity: 0.85;
+  user-select: none;
+  text-align: center;
+}
+
+
+#loveButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+#loveButton:hover {
+    transform: scale(1.1);
+}
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: popup-zoom 0.4s ease;
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+    color: #e91e63;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    background: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes popup-zoom {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+#music-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 10px 20px;
+    background-color: #ff80ab;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#music-toggle:hover {
+    transform: scale(1.05);
+}
+
